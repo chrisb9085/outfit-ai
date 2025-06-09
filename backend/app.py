@@ -69,7 +69,7 @@ def register_user():
             "password": password,
             "options": {
                 "data": {
-                    "display_name": username  # Store username in user metadata
+                    "Display name": username  # Store username in user metadata
                 }
             }
         })
@@ -96,9 +96,19 @@ def login_user():
         })
         session = auth_response.session
         if session:
-            # Extract display_name from user metadata
-            user_metadata = auth_response.user.user_metadata
-            display_name = user_metadata.get("display_name", email.split('@')[0])  # Fallback to email username
+            
+            # Extract display_name from user metadata, checking multiple possible keys
+            user_metadata = auth_response.user.user_metadata or {}
+            
+            # Try all possible variations of the key
+            display_name = user_metadata.get("display_name") or user_metadata.get("Display name") or user_metadata.get("displayName")
+            
+            # If still not found, fall back to email username
+            if not display_name:
+                display_name = email.split('@')[0]
+                print(f"No display name found in metadata, using fallback: {display_name}")
+            else:
+                print(f"Found display name in metadata: {display_name}")
             
             return jsonify({
                 "message": "Login successful", 
@@ -110,6 +120,7 @@ def login_user():
             return jsonify({"error": "Login failed, invalid email or password."}), 401
 
     except Exception as e:
+        print(f"Login error: {str(e)}")
         return jsonify({"error": str(e)}), 401
     
 def get_user_id_from_token(auth_header):
