@@ -17,7 +17,7 @@ function Login() {
                 password,
             });
 
-            console.log("Login response:", res.data); // Log the entire response
+            console.log("Login response:", res.data);
             
             // Store token and user ID correctly
             localStorage.setItem("token", res.data.access_token);
@@ -38,6 +38,7 @@ function Login() {
             setError("Invalid email or password.");
         }
     };
+    
     return (
         <div className="login-container">
             <h2>Login</h2>
@@ -60,12 +61,20 @@ function Login() {
             </form>
             {error && <p style={{ color: "red" }}>{error}</p>}
             <div className="login-footer">
-                <p> Don't have an account? <Link to="/register">Register Now </Link></p>
+                <p>Don't have an account? <Link to="/register">Register Now</Link></p>
+            </div>
+            
+            {/* Guest Access Info Box */}
+            <div className="guest-access-box">
+                <h3>Want Guest Access?</h3>
+                <p>If you'd like to test out RunwAI with our sample images please log in with the credentials below.</p>
+                <div className="guest-credentials">
+                    <p><strong>Email:</strong> ruwnwaiguest@gmail.com</p>
+                    <p><strong>Password:</strong> GuestAccess</p>
+                </div>
             </div>
         </div>
     );
 }
 
-
 export default Login;
-

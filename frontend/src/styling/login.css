@@ -86,3 +86,51 @@
 .login-footer p a:hover {
     text-decoration: underline;
 }
+/* Guest Access Box */
+.guest-access-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 300px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+}
+
+.guest-access-box h3 {
+    color: #1e3a8a;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.guest-access-box p {
+    color: #4b5563;
+    font-size: 0.875rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.guest-credentials {
+    background-color: #f3f4f6;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.guest-credentials p {
+    margin: 5px 0;
+    font-size: 0.875rem;
+}
+
+/* Add media query for better mobile experience */
+@media (max-width: 768px) {
+    .guest-access-box {
+        position: static;
+        margin: 20px auto 0;
+        max-width: 320px;
+    }
+}
