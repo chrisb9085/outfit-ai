@@ -44,10 +44,11 @@ const Preferences = () => {
             };
 
 
-            const generateResponse = await fetch("http://127.0.0.1:5000/outfits/generate", {
+            const generateResponse = await fetch("https://outfit-api.ddns.net.jumpingcrab.com/outfits/generate", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
                 },
                 body: JSON.stringify(preferences)
             });

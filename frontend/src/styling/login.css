@@ -1,0 +1,136 @@
+/* 🌄 Container Style */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+    background: linear-gradient(to right, #dbeafe, #60a5fa);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2.5rem 1.5rem; 
+    box-sizing: border-box; 
+}
+
+/* Title: Styles the main heading */
+.login-container h2 {
+    font-size: 1.75rem; /* 28px */
+    font-weight: bold;
+    margin-bottom: 1.5rem; /* 24px */
+    color: #1e3a8a;
+    text-align: center;
+}
+
+/* Form: Styles the login form itself */
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 20rem; /* 320px */
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 2rem; 
+    border-radius: 1.25rem; /* 20px */
+    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; 
+}
+
+/* Inputs: Styles for all input fields */
+.login-container input {
+    width: 100%; 
+    margin-bottom: 1rem; 
+    padding: 0.75rem; /* 12px */
+    border: 1px solid #cbd5e1;
+    border-radius: 0.75rem; /* 12px */
+    font-size: 1rem; /* 16px */
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box; 
+}
+
+/* Input Focus: Highlight on focus */
+.login-container input:focus {
+    border-color: #3b82f6;
+}
+/* Button: Styles for the submit button */
+.login-container button {
+    width: 100%; 
+    padding: 0.875rem 1.5rem;
+    border: none;
+    border-radius: 0.75rem; /* 12px */
+    background: linear-gradient(to right, #3b82f6, #60a5fa);
+    color: white;
+    font-size: 1.125rem; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    margin-top: 0.5rem; 
+    box-sizing: border-box; 
+}
+
+.login-container button:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+
+.login-footer p {
+    font-size: 0.875rem; /* 14px */
+    margin-top: 1rem; /* 16px */
+    text-align: center;
+    color: #444;
+}
+.login-footer p a {
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-footer p a:hover {
+    text-decoration: underline;
+}
+/* Guest Access Box */
+.guest-access-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 300px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+}
+
+.guest-access-box h3 {
+    color: #1e3a8a;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.guest-access-box p {
+    color: #4b5563;
+    font-size: 0.875rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.guest-credentials {
+    background-color: #f3f4f6;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.guest-credentials p {
+    margin: 5px 0;
+    font-size: 0.875rem;
+}
+
+/* Add media query for better mobile experience */
+@media (max-width: 768px) {
+    .guest-access-box {
+        position: static;
+        margin: 20px auto 0;
+        max-width: 320px;
+    }
+}
