@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from './assets/runwai_logo.png';
+import { Analytics } from "@vercel/analytics/next"
 
 function Navbar() {
     const navigate = useNavigate();
