@@ -4,6 +4,7 @@ import { Icons } from "./icons";
 import { useNavigate } from "react-router-dom";
 import Confirmation from "./confirmation";
 import Gallery from "./gallery";
+import API_URL from "./config/api";
 
 function HomePage() {
     const [wardrobeItems, setWardrobeItems] = useState([]);
@@ -35,7 +36,7 @@ function HomePage() {
             return;
         }
         try {
-            const response = await fetch("https://outfit-api.ddns.net.jumpingcrab.com/wardrobe/fetch-user-items", {
+            const response = await fetch(`${API_URL}/wardrobe/fetch-user-items`, {
                 headers:{
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
@@ -77,7 +78,7 @@ function HomePage() {
             uploadedImages.map((image) => convertToBase64(image))
         );
         try {
-            const response = await fetch("https://outfit-api.ddns.net.jumpingcrab.com/wardrobe/classify-clothing", {
+            const response = await fetch(`${API_URL}/wardrobe/classify-clothing`, {
                 method: "POST",
                 headers: { 
                     "Content-Type": "application/json",
@@ -154,7 +155,7 @@ function HomePage() {
         let saveSuccess = false;
         if (modifiedExisting.length > 0) {
             try {
-                const response = await fetch("https://outfit-api.ddns.net.jumpingcrab.com/wardrobe/update-classifications", {
+                const response = await fetch(`${API_URL}/wardrobe/update-classifications`, {
                     method: "POST",
                     headers: { 
                         "Content-Type": "application/json",
@@ -180,7 +181,7 @@ function HomePage() {
         }
         if (newItems.length > 0) {
             try {
-                const response = await fetch("https://outfit-api.ddns.net.jumpingcrab.com/wardrobe/save-clothing-items", {
+                const response = await fetch(`${API_URL}/wardrobe/save-clothing-items`, {
                     method: "POST",
                     headers: { 
                         "Content-Type": "application/json",

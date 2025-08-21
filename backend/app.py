@@ -23,7 +23,7 @@ if (Client):
 
 app = Flask(__name__)
 CORS(app, 
-     origins=["http://localhost:3000", "https://outfit-ai-three.vercel.app"],
+     origins=["http://localhost:3000", "https://runwai-stylist.vercel.app"],
      methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
      allow_headers=["Content-Type", "Authorization"]) 
 

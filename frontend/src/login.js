@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import API_URL from "./config/api";
 import './styling/login.css';
 
 function Login() {
@@ -12,7 +13,7 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("https://outfit-api.ddns.net.jumpingcrab.com/users/login", {
+            const res = await axios.post(`${API_URL}/users/login`, {
                 email,
                 password,
             });

@@ -96,7 +96,7 @@ const GeneratedOutfit = () => {
         };
 
         try {
-            const response = await fetch("https://outfit-api.ddns.net.jumpingcrab.com/outfits/save", {
+            const response = await fetch(`${API_URL}/outfits/save`, {
                 method: "POST",
                 headers: { 
                     "Content-Type": "application/json",
