@@ -23,7 +23,9 @@ if (Client):
 
 app = Flask(__name__)
 CORS(app, 
-     origins=["http://localhost:3000", "https://runwai-stylist.vercel.app"],
+     origins=["http://localhost:3000", 
+              "https://huggingface.co",
+              "https://hf.space",],
      methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
      allow_headers=["Content-Type", "Authorization"]) 
 
@@ -543,4 +545,4 @@ def save_outfit():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=7860,debug=True)
