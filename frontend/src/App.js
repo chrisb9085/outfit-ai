@@ -9,7 +9,6 @@ import ContactUs from "./contact-us.js";
 import SavedOutfits from "./saved-outfits";
 import Login from "./login";
 import Register from "./register";
-import { Analytics } from "@vercel/analytics/next"
 function App() {
     return (
         <Router>
