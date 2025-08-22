@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Icons } from "./icons";
 import confetti from "canvas-confetti";
+import API_URL from "./config/api"; // Ensure this points to your API URL
 
 const GeneratedOutfit = () => {
     const location = useLocation();

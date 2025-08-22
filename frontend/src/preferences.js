@@ -2,6 +2,7 @@ import "./styling/App.css";
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {Icons} from "./icons";
+import API_URL from "./config/api";
 
 // Sample images for testing
 import shirt1 from "./sampleImages/shirt_1.jpg";

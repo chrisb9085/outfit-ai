@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import './styling/register.css';
+import API_URL from "./config/api";
 
 function Register() {
     const [username, setName] = useState("");
