@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import API_URL from "./config/api";
 
 function SavedOutfits() {
     const [savedOutfits, setSavedOutfits] = useState([]);
@@ -30,7 +31,7 @@ function SavedOutfits() {
 
     const fetchOutfits = async () => {
         try {
-            const response = await fetch("http://150.136.215.192:8000/outfits/saved", 
+            const response = await fetch(`${API_URL}/outfits/saved`, 
                 {
                     method: "GET",
                     headers: {
